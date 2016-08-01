@@ -132,6 +132,9 @@
         GameGraphics.Dispose()
 
         If Pig.Health <= 0 Then GameEngine.Stop() : MsgBox("You Lost !" & vbCrLf & "得分： " & ScoreCount, MsgBoxStyle.Information, "游戏结束：") : LoadNewGame()
+
+        '强制回收内存
+        GC.Collect()
     End Sub
 
 #Region "窗体"
